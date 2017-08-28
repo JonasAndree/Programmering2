@@ -1,4 +1,4 @@
-package thread.ethods;
+package lesson.threads.thread.methods;
 
 public class ThreadClassDemo {
 	public static void main(String[] args) {

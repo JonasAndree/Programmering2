@@ -1,4 +1,4 @@
-package thread.ethods;
+package lesson.threads.thread.methods;
 
 //File Name : GuessANumber.java
 //Create a thread to extentd Thread
