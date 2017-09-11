@@ -49,6 +49,8 @@ public class MultiDimArryas {
 			System.out.print("\n");
 		}
 		
+
+		
 	}
 
 	
