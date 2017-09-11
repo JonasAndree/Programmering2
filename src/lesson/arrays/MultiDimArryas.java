@@ -1,5 +1,6 @@
 package lesson.arrays;
 
+import java.util.Arrays;
 
 public class MultiDimArryas {
 
@@ -30,6 +31,24 @@ public class MultiDimArryas {
 		
 		String newString = new String(copyTo);
 		System.out.println(newString);
+		
+		
+		
+		char[][] arrayWidthLines  = new char[10][10];
+		
+		for (int i = 0; i < arrayWidthLines.length; i++) {
+			Arrays.fill(arrayWidthLines[i], '-');
+		}
+		for (int i = 0; i < arrayWidthLines.length; i++) {
+			System.out.println(Arrays.toString(arrayWidthLines[i]));
+		}
+		for(int row = 0; row < arrayWidthLines.length; row++) {
+			for(int col = 0; col < arrayWidthLines[row].length; col++) {
+				System.out.print(arrayWidthLines[row][col] + " ");
+			}
+			System.out.print("\n");
+		}
+		
 	}
 
 	
