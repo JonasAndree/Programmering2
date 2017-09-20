@@ -1,7 +1,7 @@
 package lesson.arraylists;
 
 /** 
- * A Shopping Cart Using the ArrayList Class
+ * A Inventory Using the ArrayList Class
  *	
  *	In this exercise you will implement a inventory for a game using the ArrayList class. 
  *	Create a file Item.java containing the definition of a class named Item that models an item 
