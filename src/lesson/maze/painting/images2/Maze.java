@@ -1,4 +1,4 @@
-package lesson.painting4;
+package lesson.maze.painting.images2;
 
 import java.util.*;
 import java.awt.*;
@@ -11,23 +11,23 @@ import java.awt.*;
 public class Maze
 {
 	private static final String MAZE =
-			"#############G#########\n" +
-			"# #       # #         #\n" +
-			"# # # ### # # ####### #\n" +
-			"#   #   #   # #   #   #\n" +
-			"# ##### ##### # # # ###\n" +
-			"#     #     # # # # # #\n" +
-			"# ######### ### # # # #\n" +
-			"# #     #   #   #   # #\n" +
-			"# # ### # # # ####### #\n" +
-			"# # #     # #   #     #\n" +
-			"# # ########### ### # #\n" +
-			"S # #         #     # #\n" +
-			"### # ####### ####### #\n" +
-			"#   # #     #         #\n" +
-			"# ### ##### ###########\n" +
-			"#                     #\n" +
-			"#######################\n";
+			"6373333333738G233333338\n" +
+			"9 9       9 9         9\n" +
+			"9 D 5 238 D 9 6333734 9\n" +
+			"9   9   9   9 9   9   9\n" +
+			"9 23F38 E333C 9 5 9 63C\n" +
+			"9     9     9 9 9 9 9 9\n" +
+			"9 6333F3734 A3H 9 D 9 9\n" +
+			"9 9     9   9   9   9 9\n" +
+			"9 9 634 D 5 9 23B333H 9\n" +
+			"9 9 9     9 9   9     9\n" +
+			"D 9 A33333F F38 E34 5 9\n" +
+			"S 9 9         9     9 9\n" +
+			"63H 9 6333338 E33333H 9\n" +
+			"9   9 9     9         9\n" +
+			"9 23H E3334 E333333333C\n" +
+			"9                     9\n" +
+			"E333333333333333333333H\n";
 	
 	private int startX, startY;
 	private int goalX, goalY;
@@ -68,8 +68,53 @@ public class Maze
 		{
 			switch (cell)
 			{
-			case '#':
-				row.add('#');
+			case '1':
+				row.add('1');
+				break;
+			case '2':
+				row.add('2');
+				break;
+			case '3':
+				row.add('3');
+				break;
+			case '4':
+				row.add('4');
+				break;
+			case '5':
+				row.add('5');
+				break;
+			case '6':
+				row.add('6');
+				break;
+			case '7':
+				row.add('7');
+				break;
+			case '8':
+				row.add('8');
+				break;
+			case '9':
+				row.add('9');
+				break;
+			case 'A':
+				row.add('A');
+				break;
+			case 'B':
+				row.add('B');
+				break;
+			case 'C':
+				row.add('C');
+				break;
+			case 'D':
+				row.add('D');
+				break;
+			case 'E':
+				row.add('E');
+				break;
+			case 'F':
+				row.add('F');
+				break;
+			case 'H':
+				row.add('H');
 				break;
 			case 'S':
 				row.add(' ');

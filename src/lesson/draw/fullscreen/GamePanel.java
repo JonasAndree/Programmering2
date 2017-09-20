@@ -1,4 +1,4 @@
-package lesson.painting3;
+package lesson.draw.fullscreen;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,14 +14,14 @@ import javax.swing.JPanel;
  *
  */
 @SuppressWarnings("serial")
-public class MyPanel extends JPanel
+public class GamePanel extends JPanel
 {
-	private int squareX = 50;
-	private int squareY = 50;
-	private int squareW = 100;
-	private int squareH = 40;
+	private int x = 50;
+	private int y = 50;
+	private int width = 100;
+	private int height = 40;
 	
-	public MyPanel(){
+	public GamePanel(){
 		setBorder(BorderFactory.createLineBorder(Color.WHITE));
 	}
 	public Dimension getPreferredSize(){
@@ -35,7 +35,7 @@ public class MyPanel extends JPanel
 		this.setBackground(Color.BLACK);
 		
 		g.setColor(new Color(190,81,215));
-		g.fillRect(squareX, squareY, squareW, squareH);
+		g.fillRect(x, y, width, height);
 		
 		g.setColor(Color.RED);
 		g.drawString("Our 2 painting program!", 25, 120);

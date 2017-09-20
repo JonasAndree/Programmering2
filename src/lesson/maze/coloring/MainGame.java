@@ -1,4 +1,4 @@
-package lesson.painting4;
+package lesson.maze.coloring;
 
 import javax.swing.*;
 import java.awt.*;

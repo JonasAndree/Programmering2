@@ -1,4 +1,4 @@
-package lesson.painting2;
+package lesson.draw.image;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
@@ -19,10 +19,14 @@ public class MainGame
 		});
 	}
 	private static void createAndShowGUI(){
+		System.out.println("Create GUI and EDT?"+SwingUtilities.isEventDispatchThread());
 		 JFrame f = new JFrame("Painting is fun!");
 		 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		 f.add(new MyPanel());
+		 f.add(new GamePanel());
 		 f.pack();
+		 //f.setUndecorated(true);
+         f.setResizable(false);
+         f.setAlwaysOnTop(true);
 		 f.setVisible(true);
 	}
 }

@@ -1,4 +1,4 @@
-package lesson.painting.images2;
+package lesson.maze.painting.images;
 
 import java.util.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class Maze
 			"9 9     9   9   9   9 9\n" +
 			"9 9 634 D 5 9 23B333H 9\n" +
 			"9 9 9     9 9   9     9\n" +
-			"D 9 A33333F F38 E34 5 9\n" +
+			"D 9 A33333F3F38 E34 5 9\n" +
 			"S 9 9         9     9 9\n" +
 			"63H 9 6333338 E33333H 9\n" +
 			"9   9 9     9         9\n" +

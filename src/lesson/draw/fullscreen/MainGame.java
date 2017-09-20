@@ -1,4 +1,4 @@
-package lesson.painting3;
+package lesson.draw.fullscreen;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
@@ -22,7 +22,7 @@ public class MainGame
 		System.out.println("Create GUI and EDT?"+SwingUtilities.isEventDispatchThread());
 		 JFrame f = new JFrame("Painting is fun!");
 		 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		 f.add(new MyPanel());
+		 f.add(new GamePanel());
 		 f.pack();
 		 //f.setUndecorated(true);
          f.setResizable(false);
