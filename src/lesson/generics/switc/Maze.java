@@ -1,4 +1,4 @@
-package lesson.generics;
+package lesson.generics.switc;
 
 import java.util.ArrayList;
 
@@ -32,12 +32,12 @@ public class Maze {
 	}
 	private static void parseMaze() {
 		ArrayList<Character> row = new ArrayList<>();
-		
 		int x = 0, y = 0;
 		maze = new ArrayList<>();
-		
-		for (char cell : MAZE.toCharArray()) {
-			switch (cell) {
+		for (char cell : MAZE.toCharArray())
+		{
+			switch (cell)
+			{
 			case '#':
 				row.add('#');
 				break;
@@ -60,10 +60,14 @@ public class Maze {
 	}
 
 	static void drawMaze() {
-		for (ArrayList<Character> row : maze) {
-			for (char cell : row) {
+		for (ArrayList<Character> row : maze)
+		{
+			for (char cell : row)
+			{
+				if (cell == '-')
+					cell = ' ';
 				if (cell == '#')
-					cell = '\u2588';
+					cell = '█';
 				System.out.print(cell);
 				System.out.print(cell == '/' ? '\\' : cell == '\\' ? '/' : cell);
 			}

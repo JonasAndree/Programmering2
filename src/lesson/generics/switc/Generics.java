@@ -1,4 +1,4 @@
-package lesson.generics;
+package lesson.generics.switc;
 
 import java.util.*;
 
