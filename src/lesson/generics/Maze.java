@@ -24,6 +24,9 @@ public class Maze {
 			"#######################\n";
 
 	private static ArrayList<ArrayList<Character>> maze;
+	
+	
+	
 	private static int width, height;
 	
 	public static void main(String[] args) {
