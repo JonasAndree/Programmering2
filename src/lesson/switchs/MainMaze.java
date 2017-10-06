@@ -1,8 +1,8 @@
-package lesson.generics;
+package lesson.switchs;
 
 import java.util.ArrayList;
 
-public class Maze {
+public class MainMaze {
 	
 	private final static String MAZE =
 			"#######################\n" +
@@ -22,49 +22,33 @@ public class Maze {
 			"# ### ##### ###########\n" +
 			"#                     #\n" +
 			"#######################\n";
-
-	private static ArrayList<ArrayList<Character>> arrayMaze;
 	
+	private static ArrayList<ArrayList<Character>> arrayMaze;
+
 	public static void main(String[] args) {
-		parseMaze();
-		drawMaze();
+		System.out.println(MAZE);
+		parsMaze();
 	}
-	private static void parseMaze() {
+	
+	public static void parsMaze() {
+		int x = 0;
+		int y = 0;
 		ArrayList<Character> row = new ArrayList<>();
-		int x = 0, y = 0;
 		arrayMaze = new ArrayList<>();
-		
-		for (char cell : MAZE.toCharArray()) {
+		for (char cell : MAZE.toCharArray() ) {
 			switch (cell) {
 			case '#':
-				row.add('#');
-				break;
+				row.add(cell);
+				x++;
 			case ' ':
-				row.add(' ');
-				break;
+				row.add(cell);
+				x++;
 			case '\n':
-				y += 1;
-				x = 0;
 				arrayMaze.add(row);
 				row = new ArrayList<>();
-				break;
+				y++;
+				x = 0;
 			}
-			if (cell != '\n')
-				x += 1;
-		}
-
-	}
-
-	static void drawMaze() {
-		for (ArrayList<Character> row : arrayMaze) {
-			for (char cell : row) {
-				if (cell == '#')
-					cell = '\u2588';
-				System.out.print(cell);
-				System.out.print(cell);
-			}
-			System.out.println();
 		}
 	}
-
 }
