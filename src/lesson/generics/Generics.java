@@ -87,7 +87,7 @@ public class Generics
 		if (cell != ' ')
 			return false;
 		
-		path.add(new int[]{ x, y, });
+		path.add(new int[]{ x, y });
 		
 		maze.get(y).set(x, '-');
 		if (x == goalX && y == goalY)
