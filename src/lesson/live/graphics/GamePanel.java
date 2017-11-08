@@ -15,6 +15,8 @@ public class GamePanel extends JPanel {
 
 	private int rectX = 100;
 	private int rectY = 150;
+	private int rectWidth = 32;
+	private int rectHeight = 32;
 	
 	public GamePanel() {
 		Thread thread =  new Thread( new Runnable() {
@@ -46,10 +48,10 @@ public class GamePanel extends JPanel {
 		g.setColor(new Color(255, 0, 255));
 		g.drawLine(4, 5, 100, 150);
 		
-		g.fillRect(rectX++, rectY, 100, 200);
+		g.fillRect(rectX++, rectY, rectWidth, rectHeight);
 		g.setColor(new Color(0, 0, 255));
 		rectY = rectY + 1;
-		g.fillRect(400, 230, 50, 180);
+		g.fillRect(400, 230, rectWidth, rectHeight);
 		
 	}
 }
