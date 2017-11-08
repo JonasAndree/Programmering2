@@ -14,8 +14,7 @@ import javax.swing.JPanel;
  *
  */
 @SuppressWarnings("serial")
-public class GamePanel extends JPanel
-{
+public class GamePanel extends JPanel {
 	private int x = 50;
 	private int y = 50;
 	private int width = 100;
@@ -29,8 +28,7 @@ public class GamePanel extends JPanel
 		return new Dimension(tk.getScreenSize().width,tk.getScreenSize().height);
 	}
 	
-	public void paintComponent(Graphics g)
-	{
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		this.setBackground(Color.BLACK);
 		

@@ -1,6 +1,5 @@
 package lesson.draw.objects.drawArc;
 
-import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 
 /**

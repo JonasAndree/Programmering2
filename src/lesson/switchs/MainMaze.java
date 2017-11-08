@@ -2,7 +2,9 @@ package lesson.switchs;
 
 import java.util.ArrayList;
 
-public class MainMaze {
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
+public class MainMaze  {
 	
 	private final static String MAZE =
 			"#############G#########\n" +
@@ -35,9 +37,9 @@ public class MainMaze {
 		parsMaze();
 		
 		ArrayList<int[]> path = new ArrayList<>();
-		findPath(path, startX, startY);
 		
-		drawMaze();
+		findPath(path, startX, startY, endX, endY);
+		drawMaze(path);
 	}
 	
 	public static void parsMaze() {
@@ -72,7 +74,19 @@ public class MainMaze {
 		}
 	}
 	
-	public static boolean findPath(ArrayList<int[]> path, int x, int y) {
+	public static boolean findPath(ArrayList<int[]> path, int x, int y, int gX, int gY) {
+		
+		/*
+		  drawMaze(path);
+		 
+		
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		*/
+		
 		if (x < 0 || y < 0 || x > arrayMaze.get(0).size() || y > arrayMaze.size()) {
 			return false;
 		}
@@ -85,17 +99,17 @@ public class MainMaze {
 		path.add(new int[] {x, y});
 		arrayMaze.get(y).set(x, '-');
 		
-		if (x == endX && y == endY) {
+		if (x == gX && y == gY) {
 			return true;
 		}
 		
-		if (findPath(path, x, y + 1))
+		if (findPath(path, x, y + 1, gX, gY))
 			return true;
-		if (findPath(path, x, y - 1))
+		if (findPath(path, x, y - 1, gX, gY))
 			return true;
-		if (findPath(path, x + 1, y))
+		if (findPath(path, x + 1, y, gX, gY))
 			return true;
-		if (findPath(path, x - 1, y))
+		if (findPath(path, x - 1, y, gX, gY))
 			return true;
 		
 		path.remove(path.size() - 1);
@@ -103,18 +117,54 @@ public class MainMaze {
 	}
 	
 	
-	public static void drawMaze() {
+	public static void drawMaze(ArrayList<int[]> path) {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		
+		int[] position = path.get(0);
+		int currentX = position[0];
+		int currentY = position[1];
+		path.remove(0);
+		int y = 0;
+		int x = 0;
+		System.out.println("currentX= " + currentX + ", currentY= " + currentY);
 		for(ArrayList<Character> row : arrayMaze) {
 			for(char cell : row) {
 				if (cell == '#') {
 					cell = '\u2588';
 				}
-				System.out.print(cell);
-				System.out.print(cell);
+				if (cell == '-') {
+					cell = ' ';
+				}
+				
+				if (currentX == x && currentY == y) {
+					cell = '\u2526';
+					System.out.print(cell);
+					cell = '\u2524';
+					System.out.print(cell);
+				} else {
+					System.out.print(cell);
+					System.out.print(cell);
+				}
+					
+				x++;
 			}
 			System.out.println();
+			x = 0;
+			y++;
+		}
+
+		if (path.size() != 0) {
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			drawMaze(path);
 		}
 	}
+
 }
 
 

@@ -2,7 +2,7 @@ package lesson.switchs;
 
 import java.util.ArrayList;
 
-public class MainMazePath {
+public class MainMazePath extends Thread {
 	
 	private final static String MAZE =
 			"#############G#########\n" +
@@ -106,13 +106,17 @@ public class MainMazePath {
 			return true;
 		
 		//go down 
-		if (findPath(path, x, y + 1))  return true;
+		if (findPath(path, x, y + 1))  
+			return true;
 		// go up
-		if (findPath(path, x, y - 1))  return true;
+		if (findPath(path, x, y - 1))  
+			return true;
 		// go left
-		if (findPath(path, x + 1, y))  return true;
+		if (findPath(path, x + 1, y))  
+			return true;
 		// go right
-		if (findPath(path, x - 1, y))  return true;
+		if (findPath(path, x - 1, y))  
+			return true;
 		
 		/* if we can't move anywhere we return this path as false and 
 		 * we remove the last element in this path.

@@ -6,16 +6,16 @@ import javax.swing.*;
 
 
 @SuppressWarnings("serial")
-public class MazePanel extends JPanel
-{
+public class MazePanel extends JPanel {
+	// ADD 1
 	private final int SQUARE_WIDTH = 20;
+	// ADD 2
 	private final int SQUARE_HEIGHT = 20;
 	
 	private ArrayList<ArrayList<Character>> maze;
 	private ArrayList<int[]> path;
 	
-	public MazePanel() throws InterruptedException
-	{
+	public MazePanel() throws InterruptedException {
 		this.setBackground(Color.BLACK);
 		Maze maze = new Maze();
 		this.maze = maze.getMaze();
@@ -23,17 +23,14 @@ public class MazePanel extends JPanel
 		this.setPreferredSize(new Dimension(maze.getSize().width  * SQUARE_WIDTH,
 											maze.getSize().height * SQUARE_HEIGHT));
 		
-		Thread thread = new Thread(new Runnable()
-			{
+		// ADD 3
+		Thread thread = new Thread(new Runnable() {
 				@Override
-				public void run()
-				{
+				public void run() {
 					boolean erase = false; 
-					for (;;) /* forever */
-					{
+					for (;;) /* forever */ {
 						int lx = -1, ly = -1;
-						for (int[] loc : path)
-						{
+						for (int[] loc : path) {
 							char symbol = '?';
 							int x = loc[0];
 							int y = loc[1];
@@ -49,12 +46,9 @@ public class MazePanel extends JPanel
 							
 							lx = x;
 							ly = y;
-							try
-							{
+							try {
 								Thread.sleep(100);
-							}
-							catch (InterruptedException e)
-							{
+							} catch (InterruptedException e) {
 								e.printStackTrace();
 								System.exit(1);
 							}
@@ -68,21 +62,16 @@ public class MazePanel extends JPanel
 	}
 	
 	@Override
-	public void paintComponent(Graphics g)
-	{
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		drawMaze(g, this.maze);
 	}
 	
-	private void drawMaze(Graphics g, ArrayList<ArrayList<Character>> maze)
-	{
+	private void drawMaze(Graphics g, ArrayList<ArrayList<Character>> maze) {
 		int x = 0, y = 0;
-		for (ArrayList<Character> row : maze)
-		{
-			for (char cell : row)
-			{
-				switch (cell)
-				{
+		for (ArrayList<Character> row : maze) {
+			for (char cell : row) {
+				switch (cell) {
 				case ' ':
 				case '-':
 					g.setColor(Color.WHITE);

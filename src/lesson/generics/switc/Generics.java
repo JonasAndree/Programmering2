@@ -93,10 +93,14 @@ public class Generics
 		if (x == goalX && y == goalY)
 			return true;
 		
-		if (findPath(path, x, y + 1))  return true;
-		if (findPath(path, x, y - 1))  return true;
-		if (findPath(path, x + 1, y))  return true;
-		if (findPath(path, x - 1, y))  return true;
+		if (findPath(path, x, y + 1))  
+			return true;
+		if (findPath(path, x, y - 1))  
+			return true;
+		if (findPath(path, x + 1, y))  
+			return true;
+		if (findPath(path, x - 1, y))  
+			return true;
 		
 		path.remove(path.size() - 1);
 		return false;

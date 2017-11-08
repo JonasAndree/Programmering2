@@ -35,39 +35,32 @@ public class Maze
 	private ArrayList<ArrayList<Character>> maze;
 	private ArrayList<int[]> path;
 	
-	public Maze() throws InterruptedException
-	{
+	public Maze() throws InterruptedException {
 		this.path = new ArrayList<>();
 		this.parseMaze();
 		this.findPath(this.startX, this.startY);
 	}
 	
-	public ArrayList<ArrayList<Character>> getMaze()
-	{
+	public ArrayList<ArrayList<Character>> getMaze() {
 		return this.maze;
 	}
 	
-	public ArrayList<int[]> getPath()
-	{
+	public ArrayList<int[]> getPath() {
 		return this.path;
 	}
 	
-	public Dimension getSize()
-	{
+	public Dimension getSize() {
 		return new Dimension(this.width, this.height);
 	}
 	
-	private void parseMaze()
-	{
+	private void parseMaze() {
 		ArrayList<Character> row = new ArrayList<>();
 		int x = 0, y = 0;
 
 		this.maze = new ArrayList<>();
 
-		for (char cell : MAZE.toCharArray())
-		{
-			switch (cell)
-			{
+		for (char cell : MAZE.toCharArray()) {
+			switch (cell) {
 			case '#':
 				row.add('#');
 				break;
@@ -99,8 +92,7 @@ public class Maze
 		this.width = maze.get(0).size();
 	}
 	
-	private boolean findPath(int x, int y)
-	{
+	private boolean findPath(int x, int y) {
 		char cell;
 		
 		if (x < 0 || y < 0 || x >= this.width || y >= this.height)
