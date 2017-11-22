@@ -1,5 +1,8 @@
 package lesson.live.graphics;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 
 /**
@@ -31,9 +34,15 @@ public class MainGame {
 	private static void createAndShowGUI() {
 		JFrame frame = new JFrame("My first frame");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new GamePanel());
+		GamePanel panel = new GamePanel();
+		frame.add(panel);
+		
+		frame.addKeyListener(panel);
+		
+		
 		frame.pack();
 		frame.setVisible(true);
 	}
+
 
 }
