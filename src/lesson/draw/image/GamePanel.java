@@ -18,39 +18,34 @@ import javax.swing.JPanel;
  *
  */
 @SuppressWarnings("serial")
-public class GamePanel extends JPanel
-{
-	private int x = 50;
-	private int y = 50;
-	private int width = 100;
-	private int height = 40;
+public class GamePanel extends JPanel {
+	private int width;
+	private int height;
+
+	BufferedImage backgroundImage = null;
 	Toolkit tk = Toolkit.getDefaultToolkit();
-	
-	public GamePanel(){
+
+	public GamePanel() {
+		loadImages("src/lesson/draw/image/destiny-2-logos.png");	
 		setBorder(BorderFactory.createLineBorder(Color.WHITE));
 	}
-	public Dimension getPreferredSize(){
-		
-		return new Dimension(tk.getScreenSize().width,tk.getScreenSize().height);
+	public Dimension getPreferredSize() {
+		width = tk.getScreenSize().width;
+		height = tk.getScreenSize().height;
+		return new Dimension(width, height);
 	}
-	
-	public void paintComponent(Graphics g)
-	{
+	private void loadImages(String url) {
+		try {
+			backgroundImage = ImageIO.read(new File(url));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		this.setBackground(Color.BLACK);
 		
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new File("src/lesson/draw/image/destiny-2-logos.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		g.drawImage(img, 
-	            0, 0, tk.getScreenSize().width,  tk.getScreenSize().height,
-	            0, 0, img.getWidth(), img.getHeight(),
-	            null);  
+		g.drawImage(backgroundImage, 0, 0, width, height, 0, 0, backgroundImage.getWidth(),
+				backgroundImage.getHeight(), null);
 	}
 }

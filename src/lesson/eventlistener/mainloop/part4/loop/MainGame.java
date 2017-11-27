@@ -2,11 +2,6 @@ package lesson.eventlistener.mainloop.part4.loop;
 
 import javax.swing.SwingUtilities;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
-import javax.swing.JFrame;
-
 /**
  * This is the basic code structure for the game. With event listeners and some
  * graphics painting.
