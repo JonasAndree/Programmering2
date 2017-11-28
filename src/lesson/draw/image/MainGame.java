@@ -21,9 +21,11 @@ public class MainGame {
 		System.out.println("Create GUI and EDT?" + SwingUtilities.isEventDispatchThread());
 		JFrame f = new JFrame("Painting is fun!");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.add(new GamePanel());
+		GamePanel gamePanel = new GamePanel();
+		f.add(gamePanel);
 		f.pack();
-		// f.setUndecorated(true);
+		f.addKeyListener(gamePanel);
+		//f.setUndecorated(true);
 		f.setResizable(false);
 		f.setAlwaysOnTop(true);
 		f.setVisible(true);
