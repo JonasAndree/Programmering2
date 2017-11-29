@@ -1,0 +1,15 @@
+
+
+Math1. Write a Java program to round up the result of integer division.
+Math2. Write a Java program to get whole and fractional parts from a double value	
+Math3. Write a Java program to test if a double number is an integer.
+Math4. Write a Java program to round a float number to specified decimals.
+Math5. Write a Java program to count the absolute distinct value in an array. 
+Math6. Write a Java program to reverse an integer number.
+Math7. Write a Java program to convert Roman number to an integer number. 
+Math8. Write a Java program to convert an integer value to absolute value.
+Math9. Write a Java program to convert a float value to absolute value
+Math10. Write a Java program to accept a float value of number and return a rounded float value. 
+Math11. Write a Java program to accept two integers and return true if the either one is 15 or if their sum or difference is 15.
+Math12. Write a Java program to count the number of prime numbers less than a given positive number.
+Math13. Write a Java program to find the length of the longest sequence of zeros in binary representation of an integer.

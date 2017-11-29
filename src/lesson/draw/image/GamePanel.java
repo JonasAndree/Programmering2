@@ -32,9 +32,17 @@ public class GamePanel extends JPanel implements KeyListener{
 	private BufferedImage backgroundImage = null;
 	private Toolkit tk = Toolkit.getDefaultToolkit();
 	private BufferedImage playerImage = null;
+	private BufferedImage enemy1Image = null;
 
 	public GamePanel() {
-		loadImages();	
+		
+		
+		backgroundImage = loadImages("src/lesson/draw/image/destiny-2-logos.png");
+		playerImage = loadImages("src/lesson/draw/image/PlayerforJonas-1.0.png");
+		enemy1Image = loadImages("src/lesson/draw/image/PlayerforJonas-1.0.png");
+		
+		
+		
 		setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		Thread thread =  new Thread( new Runnable() {
 			public void run() {
@@ -57,13 +65,16 @@ public class GamePanel extends JPanel implements KeyListener{
 		height = tk.getScreenSize().height;
 		return new Dimension(width, height);
 	}
-	private void loadImages() {
+	
+	private BufferedImage loadImages(String url) {
+		BufferedImage temp = null;
 		try {
-			backgroundImage = ImageIO.read(new File("src/lesson/draw/image/destiny-2-logos.png"));
-			playerImage = ImageIO.read(new File("src/lesson/draw/image/PlayerforJonas-1.0.png"));
+			temp = ImageIO.read(new File(url));
+			return temp;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	private void movePlayer() {
