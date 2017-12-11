@@ -20,28 +20,25 @@ import javax.swing.JPanel;
  *
  */
 @SuppressWarnings("serial")
-public class GamePanel extends JPanel implements KeyListener{
-	private int width;
-	private int height;
-	private boolean up = false, down = false, right = false, left = false;
-	private int playerX = 200, playerY = 200;
+public class GamePanel extends JPanel implements KeyListener {
+	private static int width;
+	private static int height;
 	
-	private int speedX = 0;
-	private int speedY = 0;
+	private int enemyX = 200, enemyY = 400;
 	
-	private BufferedImage backgroundImage = null;
 	private Toolkit tk = Toolkit.getDefaultToolkit();
-	private BufferedImage playerImage = null;
-	private BufferedImage enemy1Image = null;
 
-	public GamePanel() {
+	private BufferedImage backgroundImage = null;
+	private BufferedImage enemy1Image = null;
+	
+	private Player player1;
+
+	public GamePanel(Player player1) {
 		
+		this.player1 = player1;
 		
-		backgroundImage = loadImages("src/lesson/draw/image/destiny-2-logos.png");
-		playerImage = loadImages("src/lesson/draw/image/PlayerforJonas-1.0.png");
-		enemy1Image = loadImages("src/lesson/draw/image/PlayerforJonas-1.0.png");
-		
-		
+		backgroundImage = Utilitis.loadImages("src/lesson/draw/image/destiny-2-logos.png");
+		enemy1Image = Utilitis.loadImages("src/lesson/live/graphics/img/hole.png");
 		
 		setBorder(BorderFactory.createLineBorder(Color.WHITE));
 		Thread thread =  new Thread( new Runnable() {
@@ -60,44 +57,35 @@ public class GamePanel extends JPanel implements KeyListener{
 		});
 		thread.start();
 	}
+	
+	public static int getScreenWidth() {
+		return width;
+	}
+	public static int getScreenHeight() {
+		return height;
+	}
+	
 	public Dimension getPreferredSize() {
 		width = tk.getScreenSize().width;
 		height = tk.getScreenSize().height;
 		return new Dimension(width, height);
 	}
 	
-	private BufferedImage loadImages(String url) {
-		BufferedImage temp = null;
-		try {
-			temp = ImageIO.read(new File(url));
-			return temp;
-		} catch (IOException e) {
-			e.printStackTrace();
+	private void colision(int playerX, int playerY) {
+		if ((playerX > enemyX && playerX < enemyX + 32 || playerX + 32 > enemyX && playerX < enemyX + 32) &&
+			(playerY > enemyY && playerY < enemyY + 32 || playerY + 32 > enemyY && playerY < enemyY + 32)) {
+			//hp--;
 		}
-		return null;
-	}
-	
-	private void movePlayer() {
-		if (up == true)
-			speedY = -5;
-		if (down == true)
-			speedY = 5;
-		if (!down && !up)
-			speedY = 0;
-		if (right == true)
-			speedX = 5;
-		if (left == true)
-			speedX = -5;		
-		if (!left && !right)
-			speedX = 0;
-		
-		playerX += speedX;
-		playerY += speedY;
-		
 	}
 
 	private void update () {
-		movePlayer();
+		player1.update();
+	}
+	
+	private void init() {
+		player1.init();
+		enemyX = 200; 
+		enemyY = 400;	
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -105,13 +93,17 @@ public class GamePanel extends JPanel implements KeyListener{
 		this.setBackground(Color.BLACK);
 		
 		g.drawImage(backgroundImage, 0, 0, width, height, 0, 0, backgroundImage.getWidth(),
-				backgroundImage.getHeight(), null);
+				backgroundImage.getHeight(), null);		
 		
+		g.drawImage(enemy1Image, enemyX, enemyY, 32, 32, null);
 		
-		g.drawImage(playerImage, playerX, playerY, 32, 32, null);
+		player1.draw(g);
+
+		g.setColor(Color.DARK_GRAY);
 		
 		
 	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
@@ -124,30 +116,14 @@ public class GamePanel extends JPanel implements KeyListener{
 			System.out.println("Exit program!");
 			System.exit(0);
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-			up = true;
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			down = true;
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			right = true;
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			left = true;
-		
 	}
+	
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-			up = false;
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			down = false;
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			right = false;
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			left = false;
 	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 }

@@ -18,6 +18,13 @@ import javax.swing.JFrame;
  * height = 32 px * number of maze rows. 
  * 
  * 
+ * Make a hp bar to the moving character
+ * 
+ * Try making the character jump
+ * 
+ * Set an image to the players and enemys and background 
+ * 
+ * Paralax 
  * 
  * @author jonas.andree
  *
