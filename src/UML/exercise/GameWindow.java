@@ -13,12 +13,12 @@ public class GameWindow extends JFrame implements KeyListener {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1526645828432221411L;
+	
 	/**
 	 * Sets the preferences for the game window
 	 */
-	public GameWindow (String titel){
+	public GameWindow(String titel){
 		setTitle(titel);
 		 // Sets so that the window dose not have any borders. 
 		setUndecorated(true);
@@ -57,7 +57,9 @@ public class GameWindow extends JFrame implements KeyListener {
 		  */
 		 if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 			 /* Write to the terminal if we press the esc button 
-			  * and then close the program using id 0 saying that 
+			  * and then cl
+			  * 
+			  * +ose the program using id 0 saying that 
 			  * the closing of the program went well and natural. 
 			  * Sometimes when u use get an error you want to close the 
 			  * program in this case use the id 1. There are many more id's 
