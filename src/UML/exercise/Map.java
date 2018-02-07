@@ -9,7 +9,7 @@ import UML.exercise.Block.BlockType;
 
 public class Map {
 
-	TileManeger tiles = new TileManeger();
+	public TileManeger tiles = new TileManeger();
 	public static BufferedImage map = null;
 
 	public void init(){
