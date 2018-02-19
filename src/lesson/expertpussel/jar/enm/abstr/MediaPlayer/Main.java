@@ -13,7 +13,7 @@ import java.net.URL;
 public class Main {
 
     public static void main(String[] args) throws CannotRealizeException, IOException, NoPlayerException {
-        URL mediaURL = new File("Valve.avi").toURL();
+        URL mediaURL = new File("src/lesson/expertpussel/jar/enm/abstr/MediaPlayer/Valve.avi").toURL();
         JPanel frame = new MediaPlayer(mediaURL);
         int result = JOptionPane.showConfirmDialog(
                 null,
