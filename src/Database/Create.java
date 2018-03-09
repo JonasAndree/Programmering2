@@ -22,13 +22,13 @@ public class Create {
 		/**
 		 * The MySQL user.
 		 */
-		String serverUserName = "Jonas";
+		String serverUserName = "root";
 
 		/**
 		 * Password for the above MySQL user. If no password has been set (as is the
 		 * default for the root user in XAMPP's MySQL), an empty string can be used.
 		 */
-		String serverPassword = "r32bsW6XvAMhEVrA";
+		String serverPassword = "";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();

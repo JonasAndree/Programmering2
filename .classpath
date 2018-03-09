@@ -2,6 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/xampp/htdocs/Programming2Testing/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonas.andree/Documents/GitHub/Programmering2/src/Database/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonas.andree/Documents/GitHub/Programmering2/src/lesson/expertpussel/jar/enm/abstr/jarFiles/customizer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonas.andree/Documents/GitHub/Programmering2/src/lesson/expertpussel/jar/enm/abstr/jarFiles/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonas.andree/Documents/GitHub/Programmering2/src/lesson/expertpussel/jar/enm/abstr/jarFiles/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jonas.andree/Documents/GitHub/Programmering2/src/lesson/expertpussel/jar/enm/abstr/jarFiles/multiplayer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

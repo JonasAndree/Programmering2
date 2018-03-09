@@ -19,12 +19,12 @@ public class Register {
 	/**
 	 * The server side MySQL user.
 	 */
-	private static String serverUserName = "Jonas";
+	private static String serverUserName = "root";
 	/**
 	 * Password for the above MySQL user. If no password has been set (as is the
 	 * default for the root user in XAMPP's MySQL), an empty string can be used.
 	 */
-	private static String serverPassword = "r32bsW6XvAMhEVrA";
+	private static String serverPassword = "";
 	// Sould be enterd by the user of the program.
 	private static String mail = "jonandreTe@kth.se";
 	private static String password = "1234";
