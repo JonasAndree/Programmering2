@@ -1,0 +1,2 @@
+https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html
+https://www.ntu.edu.sg/home/ehchua/programming/java/JavaServlets.html

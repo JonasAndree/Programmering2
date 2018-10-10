@@ -1,0 +1,98 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu-button {
+	position: fixed;
+	padding: 0px 6px 6px 6px;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+	z-index: 10;
+	background-color: purple;
+}
+.bar1, .bar2, .bar3 {
+	width: 30px;
+	height: 5px;
+	margin-top: 7px;
+	background-color: white;
+	transition: 0.3s;
+} 
+	.change .bar1 {
+		transform: rotate(-45deg) translate(-8px, 9px);
+	}
+	.change .bar2 {
+		opacity: 0;
+	}
+	.change .bar3 {
+		transform: rotate(45deg) translate(-8px, -9px);
+	}
+
+nav {
+	position: fixed;
+	height: 190px;
+	width: 100vw;
+	top: 40px;
+	background-color: rgba(140, 40, 40, 0.5);
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	float: left;
+	margin: 10px;
+}
+nav ul li button {
+	width: 150px;
+	height: 150px;
+} 
+
+
+.intro-color {
+	background-color: yellow;
+}
+.about-color {
+	background-color: orange;
+}
+.books-color {
+	background-color: red;
+}
+.games-color {
+	background-color: purple;
+}
+.education-color {
+	background-color: blue;
+}
+main section {
+	width: 100vw;
+	height: 100vh;
+}
+
+
+
+
+
+
+
+
+#hiding-the-container {
+	
+}
+#about-container {
+	display: none;
+}
+#to-be-or-not-to-be {
+	width: 200px;
+	height:200px;
+	background-color: rgba(200, 200, 50, 0.5);
+}
+
+
+
+
+
+

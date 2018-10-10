@@ -1,10 +1,7 @@
 package UML.exercise;
 
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.image.     BufferedImage;
-import java.awt.Point;
 
 import javax.swing.JFrame;
 

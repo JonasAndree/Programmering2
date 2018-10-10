@@ -1,0 +1,1 @@
+Note: This code uses a "thread per connection" design which most of us originally thought less efficient than a thread pooled server.
